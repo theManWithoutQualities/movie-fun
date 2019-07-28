@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         launch(Dispatchers.Default) {
             try {
                 val popularMovies = api.getPopularMovie().await().body()
-                println("MOVIES:")
                 Log.d("result", popularMovies.toString())
             } catch (e: Exception) {
                 e.printStackTrace()
